@@ -1,0 +1,18 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy root package.json and workspace files
+COPY package*.json ./
+COPY packages/shared/package*.json ./packages/shared/
+COPY packages/api/package*.json ./packages/api/
+COPY packages/database/package*.json ./packages/database/
+
+# Install all dependencies
+RUN npm install
+
+# Expose port
+EXPOSE 3000
+
+# Command for development
+CMD ["npm", "run", "dev:api"]
