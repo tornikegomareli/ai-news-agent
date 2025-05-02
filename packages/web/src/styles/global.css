@@ -1,5 +1,21 @@
 /* Global styles for the application */
 
+/* Theme variables */
+:root {
+  --primary: #88E2B5;
+  --primary-dark: #5FC498;
+  --primary-light: #A8EBCB;
+  
+  --bg-light: #F8FAFB;
+  --bg-dark: #141A21;
+  
+  --text-light: #2A3541;
+  --text-dark: #E6ECF2;
+  
+  --gray-light: #DAE1E7;
+  --gray-dark: #384250;
+}
+
 /* Reset and base styles */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -11,8 +27,14 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
-  background-color: #f9f9f9;
+  color: var(--text-light);
+  background-color: var(--bg-light);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.dark body {
+  color: var(--text-dark);
+  background-color: var(--bg-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,7 +42,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   font-weight: 600;
   line-height: 1.2;
-  color: #2c3e50;
+  color: var(--text-light);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--text-dark);
 }
 
 p {
@@ -109,15 +135,15 @@ button,
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #3498db;
-  border-color: #3498db;
+  color: var(--text-light);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-primary:hover {
-  color: #fff;
-  background-color: #2980b9;
-  border-color: #2980b9;
+  color: var(--text-light);
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
   text-decoration: none;
 }
 

@@ -1,1 +1,5 @@
-<h1>AI News Agent</h1>
+<script>
+  import WizardContainer from '$lib/components/WizardContainer.svelte';
+</script>
+
+<WizardContainer />
