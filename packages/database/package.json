@@ -1,0 +1,15 @@
+{
+  "name": "@ai-news-agent/database",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "migrate": "node scripts/migrate.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
