@@ -1,0 +1,25 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package.json files
+COPY package.json ./
+
+# Create necessary directories
+RUN mkdir -p api web
+
+# Copy API and web files
+COPY api-dev.js ./api/index.js
+COPY web-dev.js ./web/index.js
+
+# Install dependencies
+RUN npm install express cors dotenv openai @anthropic-ai/sdk node-fetch
+
+# Add node-fetch for Node.js environments that don't have native fetch
+RUN echo "if (!globalThis.fetch) { globalThis.fetch = require('node-fetch'); }" > fetch-polyfill.js
+
+# Expose ports
+EXPOSE 3000 4000
+
+# Start both servers
+CMD ["node", "-r", "./fetch-polyfill.js", "api/index.js"]

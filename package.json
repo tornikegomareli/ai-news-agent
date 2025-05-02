@@ -1,0 +1,20 @@
+{
+  "name": "ai-news-agent",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev:api": "npm run dev --workspace=@ai-news-agent/api",
+    "dev:web": "npm run dev --workspace=@ai-news-agent/web",
+    "start:api": "npm run start --workspace=@ai-news-agent/api",
+    "start:web": "npm run preview --workspace=@ai-news-agent/web",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.2"
+  }
+}
