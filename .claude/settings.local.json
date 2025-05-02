@@ -16,7 +16,11 @@
       "Bash(docker-compose:*)",
       "Bash(docker-compose:*)",
       "Bash(docker logs:*)",
-      "Bash(docker logs:*)"
+      "Bash(docker logs:*)",
+      "Bash(git commit:*)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }
